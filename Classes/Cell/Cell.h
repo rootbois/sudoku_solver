@@ -4,8 +4,8 @@
 // Author: Vincent S. Kataikko <vincent@kataikko.de>
 
 
-#ifndef SUDOKU_SOLVER_CELL_H
-#define SUDOKU_SOLVER_CELL_H
+#ifndef CELL_H_
+#define CELL_H_
 
 class Cell {
  private:
@@ -15,11 +15,25 @@ class Cell {
     // possible Values of this Cell
     int* _possibleValues;
 
+    //
+    bool _used;
+
+    // Row this Cell is in
+    int _row;
+
+    // Column this Cell is in
+    int _column;
+
  public:
     // Constructor
-    Cell();
+    Cell(int row, int column);
+
+    // Explicit Constructor for initialisation with value
+    explicit Cell(int row, int column, int value);
+
     // Deconstructor
     ~Cell();
+
     // get number of Cell, if there is number, return it, else -1
     int getNumber();
 
@@ -27,12 +41,20 @@ class Cell {
     // return array with no elements
     int* getPosValues();
 
+    //
+    int getRow();
+
+    //
+    int getCol();
+
     // set the number of this cell to value
     void setNumber(int value);
 
     // set possible Values of this Cell to values
     void setPosValues(int* values);
 
+    // returns _used value
+    bool isUsed();
 
 };
 #endif //SUDOKU_SOLVER_CELL_H
