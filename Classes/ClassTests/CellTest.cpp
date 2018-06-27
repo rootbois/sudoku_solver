@@ -4,6 +4,7 @@
 // Author: Vincent S. Kataikko <vincent@kataikko.de>
 
 #include <array>
+#include <gtest/gtest.h>
 #include "../Cell/Cell.h"
 
 TEST(CellTest, CellTestConstructors) {
