@@ -28,10 +28,10 @@ class Cell {
 
  public:
     // Constructor
-    Cell(int row, int column);
+    Cell(const int row, const int column);
 
     // Explicit Constructor for initialisation with value
-    explicit Cell(int row, int column, int value);
+    explicit Cell(const int row, const int column, const int value);
 
     // Deconstructor
     ~Cell();
