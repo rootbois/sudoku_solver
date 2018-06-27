@@ -7,13 +7,15 @@
 #ifndef CELL_H_
 #define CELL_H_
 
+#include <array>
+
 class Cell {
  private:
     // number of this Cell
     int _number;
 
     // possible Values of this Cell
-    int* _possibleValues;
+    std::array<int> _possibleValues;
 
     //
     bool _used;
@@ -35,26 +37,26 @@ class Cell {
     ~Cell();
 
     // get number of Cell, if there is number, return it, else -1
-    int getNumber();
+    int getNumber() const ;
 
     // get possible values for this Cell, if there is already a value
-    // return array with no elements
-    int* getPosValues();
+    // return array  else returns array with size 0
+    std::array<int> getPosValues() const ;
 
     //
-    int getRow();
+    int getRow() const ;
 
     //
-    int getCol();
+    int getCol() const ;
 
     // set the number of this cell to value
     void setNumber(int value);
 
     // set possible Values of this Cell to values
-    void setPosValues(int* values);
+    void setPosValues(std::array<int> values);
 
     // returns _used value
-    bool isUsed();
+    bool isUsed() const ;
 
 };
-#endif //SUDOKU_SOLVER_CELL_H
+#endif // CELL_H_
